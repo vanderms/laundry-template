@@ -1,0 +1,26 @@
+$margin-page1: 10%;
+
+$color-primary: #006AF3;
+$color-light: #E6E6E6;
+$color-dark: #141414;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  background-color: $color-light;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main-content{
+  min-height: 100vh;
+}
