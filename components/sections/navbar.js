@@ -9,15 +9,15 @@ function Navbar(){
         LAUNDRY
       </div>
       <div className="links">
-        <Link href='/'>HOME</Link>
-        <Link href='/#sobre'>SOBRE</Link>
-        <Link href='/#servicos'>SERVIÇOS</Link>
-        <Link href='/dicas'>DICAS</Link>
-        <span tabindex='0' className='contato'>CONTATO</span>
+        <Link href='/'><a>HOME</a></Link>
+        <Link href='/#sobre'><a>SOBRE</a></Link>
+        <Link href='/#servicos'><a>SERVIÇOS</a></Link>
+        <Link href='/dicas'><a>DICAS</a></Link>
+        <span tabIndex='0' className='contato'>CONTATO</span>
       </div>
-      <div tabindex='0' className="cta">
-        BAIXE O APP
-      </div>
+      <Link href='/'>
+        <a className='cta'>BAIXE O APP</a>        
+      </Link>
     </nav>
   );
 }

@@ -1,0 +1,75 @@
+@use 'utilities.scss' as util;
+
+
+.section-cover{
+  position: relative;
+  width: 100%;
+  height: calc(100vh - #{util.$height-infobar} - #{util.$height-navbar} - 20px);
+  background-image: url('/assets/pexels-arina-krasnikova-5418933.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;  
+  color: white;
+
+  .backdrop{
+    position: absolute;
+    z-index: 1;        
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.80;
+  }
+
+  .container{
+    position: absolute;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0px util.$margin-page1 0px util.$margin-page1;    
+
+    .title{
+      width: 60%;
+      font-size: 36px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+      h1{
+        margin: 0px;
+      }
+    }
+
+    .subtitle{
+      width: 50%;
+      line-height: 1.8;
+    }
+  }
+
+  .cta{
+    .text{
+      font-size: 0.8em;
+      margin-bottom: 10px;      
+    }
+    form{
+      input{
+        padding: 8px 12px;
+        height: 42px;
+        font-family: inherit;
+        font-size: 1em;          
+      }
+      input[type=text]{
+        border: 1px solid #777;
+        border-radius: 5px 0px 0px 5px;
+      }
+
+      input[type = submit]{
+        background-color: util.$color-primary;
+        border-radius: 0px 5px 5px 0px;
+        color: white;
+        border: none;   
+        cursor: pointer;
+        font-weight: 500;
+      }
+    }
+  }
+}

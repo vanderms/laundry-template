@@ -1,17 +1,17 @@
-@use 'globals.scss' as global;
+@use 'utilities.scss' as util;
 
 
 .navbar{
   width: 100%;
-  height: 96px;
-  padding: 0px global.$margin-page1 0px global.$margin-page1;
+  height: util.$height-navbar;
+  padding: 0px util.$margin-page1 0px util.$margin-page1;
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   .logo{
-    color: global.$color-primary;
+    color: util.$color-primary;
     font-size: 24px;
     font-weight: 900;
   }
@@ -27,12 +27,11 @@
     }    
   }
 
-  .cta {
-    cursor: pointer;
+  .cta {   
     padding: 8px 16px;
-    border: 1px solid global.$color-primary;
+    border: 1px solid util.$color-primary;
     border-radius: 5px;
-    color: global.$color-primary;
+    color: util.$color-primary;
     font-weight: 600;
   }
 }

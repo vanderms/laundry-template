@@ -1,15 +1,11 @@
-$margin-page1: 10%;
-
-$color-primary: #006AF3;
-$color-light: #E6E6E6;
-$color-dark: #141414;
+@use 'utilities.scss' as util;
 
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
-  background-color: $color-light;
+  background-color: util.$color-light;
 }
 
 a {
@@ -22,5 +18,5 @@ a {
 }
 
 .main-content{
-  min-height: 100vh;
+  min-height: calc(100vh - #{util.$height-infobar} - #{util.$height-navbar} - 20px);
 }
