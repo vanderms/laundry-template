@@ -4,7 +4,7 @@ export default function Infobar(){
 
   return (
     <section className='infobar'>     
-      <ContactInfo/>           
+      <ContactInfo/>      
     </section>
   );
 }

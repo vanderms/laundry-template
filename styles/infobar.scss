@@ -1,6 +1,11 @@
 @use 'utilities.scss' as util;
 
+
 .infobar{
+  @include util.media-tablet{
+    display: none;
+  }
+
   width: 100%;
   height: util.$height-infobar;
   background-color: util.$color-dark;
@@ -12,6 +17,11 @@
   font-size: 14px;
 
   .items { 
+    
+    @include util.media-tablet{
+      display: none;
+    }
+
     display: flex;
     align-items: center;
    
@@ -29,6 +39,10 @@
   }
 
   .social-media{
+    @include util.media-tablet{
+      display: none;
+    }
+
     display: flex;
     align-items: center;
 
@@ -40,5 +54,5 @@
         width: auto;
       }   
     }
-  }
+  }  
 }

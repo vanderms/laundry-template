@@ -1,12 +1,28 @@
 import Link from 'next/link';
-
+import { useState, useEffect } from 'react';
 
 function Navbar(){
-  
+
+  const [ fixed, setFixed ] = useState(false);
+
+  const handleScroll = ()=>{   
+    if(window.scrollY > 40){
+      setFixed(true);
+    } 
+    else {
+      setFixed(false);
+    }
+  }
+
+  useEffect(()=>{
+    window.addEventListener('scroll', handleScroll);    
+  }, [])
+
   return(
-    <nav className='navbar'>
+    <>
+    <nav className={`navbar ${fixed ? 'fixed' : ''}`}>
       <div className="logo">
-        LAUNDRY
+        LAUNDRY 
       </div>
       <div className="links">
         <Link href='/'><a>HOME</a></Link>
@@ -19,6 +35,10 @@ function Navbar(){
         <a className='cta'>BAIXE O APP</a>        
       </Link>
     </nav>
+    <div className={`navbar-placeholder ${fixed ? '' : 'hidden-on-large-screen'}`}>
+      <img className='menu' src="/assets/icons/icon-material-menu.svg" alt="menu icon" />
+    </div>
+    </>
   );
 }
 

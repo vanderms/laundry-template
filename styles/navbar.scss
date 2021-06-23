@@ -1,7 +1,57 @@
 @use 'utilities.scss' as util;
 
 
-.navbar{
+.navbar-placeholder{
+  height: util.$height-navbar;
+  width: 100%;
+  background-color: black;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+  &.hidden-on-large-screen {
+    display: none;
+  }
+
+  @include util.media-tablet{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+    &.hidden-on-large-screen{
+      display: flex;
+    }
+    height: 56px;    
+  }
+
+  .menu{
+    display: none;
+    @include util.media-tablet{
+      display: inherit;
+    }
+  }
+}
+
+
+.navbar {
+  @include util.media-tablet{
+    position: fixed;
+    padding: 60px 0px 0px 0px;
+    margin: 0px;
+    top: 0px;
+    width: 0px;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;    
+    background-color: black;
+    color: white;
+    overflow: hidden;
+  }
+  
+  &.fixed {
+    position: fixed;
+    top: 0px;
+  }
+
+  z-index: 10;
   width: 100%;
   height: util.$height-navbar;
   padding: 0px util.$margin-page1 0px util.$margin-page1;
@@ -9,6 +59,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+ // border-top: 1px solid #CCC;
 
   .logo{
     color: util.$color-primary;
@@ -16,10 +68,33 @@
     font-weight: 900;
   }
 
-  .links{
-    margin-left: 40px;
-    *{
-     margin-left: 40px; 
+  .links {
+    @include util.media-tablet{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+      
+    a, span {
+      
+      margin-left: 40px; 
+      &:first-child{
+        margin-left: 80px;
+      }
+      
+      @include util.media-large-tablet{
+        margin-left: 25px;
+        &:first-child{
+          margin-left: 40px;
+        }
+      }
+
+      @include util.media-tablet{
+        margin-left: 0px;
+        &:first-child{
+          margin-left: 0px;
+        }
+      }
     }
 
     .contato{

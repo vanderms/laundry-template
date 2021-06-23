@@ -1,4 +1,5 @@
 $margin-page1: 10%;
+$margin-page1-mobile: 20px;
 
 $color-primary: #006AF3;
 $color-light: #E6E6E6;
@@ -6,3 +7,35 @@ $color-dark: #141414;
 
 $height-navbar: 80px;
 $height-infobar: 40px;
+
+
+@mixin media-small-mobile {
+  @media screen and (max-width: 359px){
+    @content;
+  }
+}
+
+@mixin media-mobile {
+  @media screen and (max-width: 767px){
+    @content;
+  }
+}
+
+@mixin media-tablet{
+  @media screen and (max-width: 991px){
+    @content;
+  }
+}
+
+@mixin media-large-tablet{
+  @media screen and (max-width: 1199px){
+    @content;
+  }
+}
+
+
+@mixin media-large-desktop{
+  @media screen  and (min-width: 1601){
+    @content;
+  }
+}
