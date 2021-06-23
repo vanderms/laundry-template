@@ -13,8 +13,7 @@ function Cover(){
     <section className="section-cover">
       <div className="backdrop"></div>
       <div className="container">       
-        <div>
-        <div className="logo">LAUNDRY</div>
+        <div>       
         <div className="title">
           <h1>A SUA LAVANDERIA EM SÃO PAULO</h1>
         </div>

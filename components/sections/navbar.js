@@ -63,6 +63,7 @@ function Navbar(){
           alt="menu icon" 
           onClick = { openSidebar }
         />
+        <div className="logo">LAUNDRY</div>
     </div>
     <div 
       className={`sidebar-backdrop ${sidebarClosed ? 'sidebar-closed' : ''}`}

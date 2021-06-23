@@ -31,7 +31,7 @@
     display: flex;
     padding: 0px util.$margin-page1-mobile;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     padding-right: 20px;    
     height: util.$height-sidebar-menu; 
     width: 100%;
@@ -40,7 +40,9 @@
 
   .menu {
     display: none;
+    position: absolute;
     height: 22px;
+    right: 20px;
     width: auto;
     cursor: pointer;
     @include util.media-tablet{
@@ -48,6 +50,12 @@
         display: inherit;
       }
     }
+  }
+
+  .logo{
+    font-size: 24px;
+    font-weight: 900;
+    color: util.$color-primary;
   }
 }
 
