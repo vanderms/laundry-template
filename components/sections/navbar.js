@@ -4,8 +4,14 @@ import { useState, useEffect } from 'react';
 function Navbar(){
 
   const [ fixed, setFixed ] = useState(false);
+  const [sidebarClosed, setSidebarClosed] = useState(true);
 
-  const handleScroll = ()=>{   
+  useEffect(()=>{
+    window.addEventListener('scroll', handleScroll);    
+  }, [])
+
+
+  function handleScroll(){   
     if(window.scrollY > 40){
       setFixed(true);
     } 
@@ -14,13 +20,24 @@ function Navbar(){
     }
   }
 
-  useEffect(()=>{
-    window.addEventListener('scroll', handleScroll);    
-  }, [])
+  function closeSidebar(){
+    setSidebarClosed(true);  
+  }
+
+  function openSidebar(){
+    setSidebarClosed(false);
+  } 
 
   return(
     <>
-    <nav className={`navbar ${fixed ? 'fixed' : ''}`}>
+    <nav className={`navbar ${ fixed ? 'fixed' : '' } ${ sidebarClosed ? 'sidebar-closed' : ''}`}>
+      <img
+        tabIndex='1'
+        src="/assets/icons/icon-material-close.svg" 
+        alt="close icon" 
+        className="close" 
+        onClick = { closeSidebar }
+      />
       <div className="logo">
         LAUNDRY 
       </div>
@@ -35,9 +52,22 @@ function Navbar(){
         <a className='cta'>BAIXE O APP</a>        
       </Link>
     </nav>
-    <div className={`navbar-placeholder ${fixed ? '' : 'hidden-on-large-screen'}`}>
-      <img className='menu' src="/assets/icons/icon-material-menu.svg" alt="menu icon" />
+    <div className={`navbar-placeholder ${fixed ? 'fixed' : ''}`}>
+      
     </div>
+    <div className="sidebar-menu">
+      <img 
+          tabIndex='1'
+          className={`menu ${sidebarClosed ? 'sidebar-closed' : ''}`}
+          src="/assets/icons/icon-material-menu.svg" 
+          alt="menu icon" 
+          onClick = { openSidebar }
+        />
+    </div>
+    <div 
+      className={`sidebar-backdrop ${sidebarClosed ? 'sidebar-closed' : ''}`}
+      onClick={ closeSidebar }  
+    ></div>
     </>
   );
 }

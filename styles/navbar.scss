@@ -1,35 +1,72 @@
 @use 'utilities.scss' as util;
 
 
-.navbar-placeholder{
-  height: util.$height-navbar;
-  width: 100%;
-  background-color: black;
-  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
 
-  &.hidden-on-large-screen {
-    display: none;
+.navbar-placeholder{
+  display: none;
+
+  &.fixed{
+    display: block;
+    height: util.$height-navbar;    
   }
 
   @include util.media-tablet{
+    display: block;
+    height: util.$height-sidebar-menu;
+
+    &.fixed{
+      height: util.$height-sidebar-menu;
+    }    
+  }
+}
+
+.sidebar-menu{
+ 
+  display: none;
+
+  @include util.media-tablet{
+    position: fixed;
+    top: 0px;
+    z-index: 8;
     display: flex;
+    padding: 0px util.$margin-page1-mobile;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 20px;
-    &.hidden-on-large-screen{
-      display: flex;
-    }
-    height: 56px;    
+    padding-right: 20px;    
+    height: util.$height-sidebar-menu; 
+    width: 100%;
+    background-color: black;   
   }
 
-  .menu{
+  .menu {
     display: none;
+    height: 22px;
+    width: auto;
+    cursor: pointer;
     @include util.media-tablet{
-      display: inherit;
+      &.sidebar-closed{
+        display: inherit;
+      }
     }
   }
 }
 
+.sidebar-backdrop{
+  display: none;
+  @include util.media-tablet{
+    &.sidebar-closed{
+      display: none;
+    }
+    display: block;
+    position: fixed;
+    top: 0px;
+    height: 120vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 9;
+  }
+}
 
 .navbar {
   @include util.media-tablet{
@@ -37,8 +74,13 @@
     padding: 60px 0px 0px 0px;
     margin: 0px;
     top: 0px;
-    width: 0px;
-    height: 100vh;
+    width: calc(100% - 30px);
+    &.sidebar-closed {
+      width: 0px;
+      transition: width 0s;
+    }
+    transition: width 0.25s;
+    height: 120vh;
     flex-direction: column;
     justify-content: flex-start;    
     background-color: black;
@@ -59,10 +101,29 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
- // border-top: 1px solid #CCC;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2); 
+
+
+  .close{
+    display: none;
+    height: 22px;
+    width: auto;
+    cursor: pointer;
+    @include util.media-tablet{
+      display: block;
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      color: white;
+    }
+  }
 
   .logo{
+    @include util.media-tablet{
+      font-size: 42px;
+      margin: 40px 0px;
+    }
+
     color: util.$color-primary;
     font-size: 24px;
     font-weight: 900;
@@ -91,6 +152,7 @@
 
       @include util.media-tablet{
         margin-left: 0px;
+        margin-top: 20px;
         &:first-child{
           margin-left: 0px;
         }
@@ -102,11 +164,16 @@
     }    
   }
 
-  .cta {   
+  .cta {  
+    @include util.media-tablet{
+      margin-top: 20px;
+      background-color: util.$color-primary;
+      color: white; 
+    } 
     padding: 8px 16px;
     border: 1px solid util.$color-primary;
     border-radius: 5px;
     color: util.$color-primary;
     font-weight: 600;
-  }
+  }  
 }
