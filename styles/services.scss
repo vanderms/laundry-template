@@ -1,25 +1,18 @@
 @use 'utilities.scss' as util;
 
 
-.section-features{
-  background-color: util.$color-primary;
-  color: util.$color-light;
-  padding: util.$margin-vertical-section util.$margin-page1;
-
-  @include util.media-mobile{
-    padding: util.$margin-vertical-section util.$margin-page-mobile;
-  }
- 
+.section-services{  
+  padding: util.$margin-vertical-section util.$margin-page1 0px util.$margin-page1;
+  
   .cards-container{
     display: flex;
     justify-content: space-between;
     @include util.media-large-tablet{
       flex-direction: column;
       align-items: center;
-
     }
           
-    .feature-card{
+    .service-card{
       background-color: white;
       display: flex;
       flex-direction: column;
@@ -43,15 +36,13 @@
       @include util.media-mobile{
         width: 100%;
       }
-      .circle{
-        background-color: black;
-       
-        height: 105px;
-        width: 105px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
+
+      .img-container{
+        height: 180px;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;        
       }
 
       h3{

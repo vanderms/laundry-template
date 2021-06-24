@@ -4,6 +4,8 @@ import '../styles/navbar.scss';
 import '../styles/cover.scss';
 import '../styles/footer.scss';
 import '../styles/features.scss';
+import '../styles/laundry_app.scss';
+import '../styles/services.scss';
 
 import Layout from '../components/sections/layout';
 

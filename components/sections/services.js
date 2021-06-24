@@ -1,27 +1,27 @@
-import FeatureCard from "../utilities/feature_card";
+import ServiceCard from "../utilities/service_card";
 
-export default function Features(){
+export default function Services(){
 
   return (
-    <section className="section-features">
+    <section className="section-services">
       <header className="section-header">
-        <h2>O MELHOR SERVIÇO PELO MENOR PREÇO</h2>
+        <h2> SERVIÇOS PRESTADOS COM <span>AMOR</span></h2>
         <div className='text'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.</div>
       </header>
       <div className="cards-container">
-        <FeatureCard
-          title="ENTREGA EXPRESSA"
-          iconSrc='/assets/icons/icon-awesome-truck.svg'
+        <ServiceCard
+          title="LAVAGEM POR KG"
+          imgSrc='/assets/maude-frederique-lavoie-EDSTj4kCUcw-unsplash.png'
           text='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
         />
-        <FeatureCard
-          title="SERVIÇO COM QUALIDADE"
-          iconSrc='/assets/icons/icon-awesome-check-square.svg'
+        <ServiceCard
+          title="LAVANDERIA SELF-SERVICE"
+          imgSrc='/assets/washer-dryer-1.png'
           text='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
         />  
-         <FeatureCard
-          title="PREÇOS BAIXOS"
-          iconSrc='/assets/icons/icon-awesome-credit-card.svg'
+         <ServiceCard
+          title="IMPERMEBEALIZAÇÃO"
+          imgSrc='assets/andrea-davis-duXRC8vT5wQ-unsplash.png'
           text='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
         />  
       </div>

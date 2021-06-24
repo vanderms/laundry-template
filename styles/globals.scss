@@ -23,3 +23,27 @@ a {
     min-height: calc(100vh - #{util.$height-sidebar-menu});
   }
 }
+
+
+.section-header{
+  text-align: center;
+  margin: 0px 18% 60px 18%;
+
+  @include util.media-tablet{
+    margin: 0px 5% 80px 5%;
+  }
+
+  h2 {
+    margin: 10px 0px;
+    font-size: 28px;
+    span {
+      color: util.$color-primary;
+    }
+  } 
+
+  .text {
+    @include util.media-tablet{
+      display: none;
+    }
+  }
+}
