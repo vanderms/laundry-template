@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 
-function Cover(){
+export default function Cover(){
 
-  const [cep, setCep] = useState('');
-  
+  const [cep, setCep] = useState('');  
   
   function handleOnChange(e){    
     setCep(e.target.value);
@@ -39,4 +38,3 @@ function Cover(){
   );
 }
 
-export default Cover;

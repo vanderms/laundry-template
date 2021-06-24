@@ -6,6 +6,8 @@ import '../styles/footer.scss';
 import '../styles/features.scss';
 import '../styles/laundry_app.scss';
 import '../styles/services.scss';
+import '../styles/dicas.scss';
+
 
 import Layout from '../components/sections/layout';
 

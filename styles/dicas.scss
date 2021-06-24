@@ -1,0 +1,70 @@
+@use 'utilities.scss' as util;
+
+
+.section-dicas{  
+  padding: util.$margin-vertical-section util.$margin-page1 0px util.$margin-page1;
+  
+  .cards-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+          
+    .card {     
+      display: flex;           
+      border-radius: 5px;  
+      background-color: white;
+      margin-bottom: 60px;
+
+      &:last-child{
+        margin-bottom: 0px;
+      }
+
+      &.right{
+        flex-direction: row-reverse;
+      }
+
+      .bg-img {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 300px;
+        width: 50%;
+
+       
+
+      }
+      
+      .text-container { 
+        width: 50%;     
+        position: relative;
+        padding: 20px 40px;   
+        
+        h3{
+          margin: 25px 0px;
+          text-align: center;
+        }
+
+        .link-placeholder{
+          margin-top: 60px;
+        }
+        a {   
+          position: absolute;
+          bottom: 20px;
+          right: 40px;                 
+          padding: 8px 16px;         
+          border-radius: 5px;
+          background-color: util.$color-primary;
+          color: white;
+          font-weight: 600;
+        }
+
+      }
+
+      
+
+    }
+
+  }
+
+}
