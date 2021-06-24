@@ -1,5 +1,6 @@
-$margin-page1: 10%;
+$margin-page1: min(20%, max(10%, calc(50vw - 546px)));
 $margin-page1-mobile: 20px;
+$margin-vertical-section: 80px;
 
 $color-primary: #006AF3;
 $color-light: #E6E6E6;
@@ -9,6 +10,7 @@ $height-navbar: 80px;
 $height-sidebar-menu: 56px;
 $height-infobar: 40px;
 
+//
 
 @mixin media-small-mobile {
   @media screen and (max-width: 359px){
@@ -36,7 +38,7 @@ $height-infobar: 40px;
 
 
 @mixin media-large-desktop{
-  @media screen  and (min-width: 1601){
+  @media screen  and (min-width: 1367){
     @content;
   }
 }

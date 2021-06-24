@@ -4,9 +4,9 @@
 .section-cover{
   position: relative;
   width: 100%;
-  height: calc(100vh - #{util.$height-infobar} - #{util.$height-navbar} - 20px);
+  height: calc(100vh - #{util.$height-infobar} - #{util.$height-navbar});
   @include util.media-tablet{
-    min-height: calc(100vh - #{util.$height-sidebar-menu} - 20px);
+    min-height: calc(100vh - #{util.$height-sidebar-menu});
   }
 
   background-image: url('/assets/pexels-arina-krasnikova-5418933.jpg');

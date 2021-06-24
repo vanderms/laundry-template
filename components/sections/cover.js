@@ -4,9 +4,15 @@ import { useState } from 'react';
 function Cover(){
 
   const [cep, setCep] = useState('');
-  const cepHandler = (e)=>{
-    console.log(e);
+  
+  
+  function handleOnChange(e){    
     setCep(e.target.value);
+  }
+
+  function handleOnSubmit(e){
+    e.preventDefault();
+    setCep('');
   }
 
   return (
@@ -23,8 +29,8 @@ function Cover(){
         </div>       
         <div className="cta">
           <div className='text'>Confira se os nossos serviços estão disponíveis na sua região</div>
-          <form>            
-            <input type="text" value={cep} onChange={cepHandler} placeholder='Digite seu CEP' />
+          <form onSubmit={handleOnSubmit}>            
+            <input type="text" value={cep} onChange={handleOnChange} placeholder='Digite seu CEP' />
             <input type="submit" value="CONSULTAR"/>
           </form>
         </div>
