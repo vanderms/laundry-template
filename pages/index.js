@@ -4,6 +4,7 @@ import Features from '../components/sections/features';
 import LaundryApp from '../components/sections/laundry_app';
 import Services from '../components/sections/services';
 import Dicas from '../components/sections/dicas';
+import Sobre from '../components/sections/sobre';
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <LaundryApp/>
       <Services/>
       <Dicas/>
+      <Sobre/>
     </>
   )
 }

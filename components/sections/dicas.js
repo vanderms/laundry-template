@@ -18,7 +18,7 @@ export default function Dicas(){
         />  
         <DicasCard
           imgSrc='/assets/waldemar-brandt-UP9DtTjRYpI-unsplash.png'
-          title='DEZ DICAS PARA PASSAR UM JEANS'
+          title='COMO PASSAR UM JEANS'
           text='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo.'
           href='/dicas/dez-dicas-para-passar-um-jeans'
           side = 'right'
