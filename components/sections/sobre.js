@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Sobre(){
   return(
-    <section className="sobre-section">
+    <section id='sobre' className="sobre-section">
       <div className="header-container">
         <header className="section-header">
           <h2><span>QUEM</span> SOMOS</h2>

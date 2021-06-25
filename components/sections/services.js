@@ -3,7 +3,7 @@ import ServiceCard from "../utilities/service_card";
 export default function Services(){
 
   return (
-    <section className="section-services">
+    <section id='servicos' className="section-services">
       <header className="section-header">
         <h2> SERVIÇOS PRESTADOS COM <span>AMOR</span></h2>
         <div className='text'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.</div>

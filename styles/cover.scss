@@ -8,7 +8,7 @@
   @include util.media-tablet{
     min-height: calc(100vh - #{util.$height-sidebar-menu});
   }
-
+ 
   background-image: url('/assets/pexels-arina-krasnikova-5418933.jpg');
   background-size: cover;
   background-repeat: no-repeat;

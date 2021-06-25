@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 function Navbar(){
 
   const [ fixed, setFixed ] = useState(false);
-  const [sidebarClosed, setSidebarClosed] = useState(true);
+  const [ sidebarClosed, setSidebarClosed ] = useState(true);
+
 
   useEffect(()=>{
     window.addEventListener('scroll', handleScroll);    
@@ -28,6 +29,7 @@ function Navbar(){
     setSidebarClosed(false);
   } 
 
+  
   return(
     <>
     <nav className={`navbar ${ fixed ? 'fixed' : '' } ${ sidebarClosed ? 'sidebar-closed' : ''}`}>
@@ -43,8 +45,8 @@ function Navbar(){
       </div>
       <div className="links">
         <Link href='/'><a>HOME</a></Link>
-        <Link href='/#sobre'><a>SOBRE</a></Link>
-        <Link href='/#servicos'><a>SERVIÇOS</a></Link>
+        <a href='/#sobre'>SOBRE</a>
+        <a href='/#servicos'>SERVIÇOS</a>
         <Link href='/dicas'><a>DICAS</a></Link>
         <span tabIndex='0' className='contato'>CONTATO</span>
       </div>
