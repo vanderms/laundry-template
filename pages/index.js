@@ -10,8 +10,8 @@ import Sobre from '../components/sections/sobre';
 export default function Home() {
   
   return (
-    <>      
-      <Cover/>
+    <>
+      <Cover/>      
       <Features/>
       <LaundryApp/>
       <Services/>
