@@ -10,14 +10,14 @@ export default function Dicas(){
       </header>
       <div className="cards-container">
         <DicasCard
-          imgSrc='/assets/waldemar-brandt-Db4d6MRIXJc-unsplash.png'
+          imgSrc='/laundry-template/assets/waldemar-brandt-Db4d6MRIXJc-unsplash.png'
           title='COMO LAVAR ROUPA SOCIAL'
           text='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo.'
           href='/dicas/como-lavar-roupa-social'
           side = 'left'
         />  
         <DicasCard
-          imgSrc='/assets/waldemar-brandt-UP9DtTjRYpI-unsplash.png'
+          imgSrc='/laundry-template/assets/waldemar-brandt-UP9DtTjRYpI-unsplash.png'
           title='COMO PASSAR UM JEANS'
           text='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo.'
           href='/dicas/dez-dicas-para-passar-um-jeans'

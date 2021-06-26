@@ -11,17 +11,17 @@ export default function Features(){
       <div className="cards-container">
         <FeatureCard
           title="ENTREGA EXPRESSA"
-          iconSrc='/assets/icons/icon-awesome-truck.svg'
+          iconSrc='/laundry-template/assets/icons/icon-awesome-truck.svg'
           text='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
         />
         <FeatureCard
           title="SERVIÇO COM QUALIDADE"
-          iconSrc='/assets/icons/icon-awesome-check-square.svg'
+          iconSrc='/laundry-template/assets/icons/icon-awesome-check-square.svg'
           text='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
         />  
          <FeatureCard
           title="PREÇOS BAIXOS"
-          iconSrc='/assets/icons/icon-awesome-credit-card.svg'
+          iconSrc='/laundry-template/assets/icons/icon-awesome-credit-card.svg'
           text='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
         />  
       </div>

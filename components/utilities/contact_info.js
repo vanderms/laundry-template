@@ -16,13 +16,13 @@ export default function ContactInfo(){
       </div>
       <div className="social-media">
         <a href="https://www.instagram.com" target='_blank' rel="noreferrer noopener">
-          <img src="/assets/icons/icon-awesome-instagram.svg" alt="phone icon"/>
+          <img src="/laundry-template/assets/icons/icon-awesome-instagram.svg" alt="phone icon"/>
         </a>
         <a href="https://www.facebook.com" target='_blank' rel="noreferrer noopener">
-          <img src="/assets/icons/icon-awesome-facebook.svg" alt="phone icon"/>
+          <img src="/laundry-template/assets/icons/icon-awesome-facebook.svg" alt="phone icon"/>
         </a>
         <a href="https://twitter.com" target='_blank' rel="noreferrer noopener">
-          <img src="/assets/icons/icon-awesome-twitter.svg" alt="phone icon"/>
+          <img src="/laundry-template/assets/icons/icon-awesome-twitter.svg" alt="phone icon"/>
         </a>
       </div>
     </>

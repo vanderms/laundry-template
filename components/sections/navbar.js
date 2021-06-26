@@ -35,7 +35,7 @@ function Navbar(){
     <nav className={`navbar ${ fixed ? 'fixed' : '' } ${ sidebarClosed ? 'sidebar-closed' : ''}`}>
       <img
         tabIndex='1'
-        src="/assets/icons/icon-material-close.svg" 
+        src="/laundry-template/assets/icons/icon-material-close.svg" 
         alt="close icon" 
         className="close" 
         onClick = { closeSidebar }
@@ -61,7 +61,7 @@ function Navbar(){
       <img 
           tabIndex='1'
           className={`menu ${sidebarClosed ? 'sidebar-closed' : ''}`}
-          src="/assets/icons/icon-material-menu.svg" 
+          src="/laundry-template/assets/icons/icon-material-menu.svg" 
           alt="menu icon" 
           onClick = { openSidebar }
         />
