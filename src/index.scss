@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,900&display=swap');
+
+$primary: #006AF3;
+$light: #fff;
+$dark: #000;
+$color-body-background: #E6E6E6;
+
+$height-navbar: 80px;
+$height-sidebar-menu: 56px;
+$height-infobar: 40px;
+
+$spacing1: 8px;
+$spacing2: 13px;
+$spacing3: 21px;
+$spacing4: 34px;
+$spacing5: 55px;
+$spacing6: 89px;
+$spacing7: 144px;
+
+$rounded1: 5px;
+$rounded2: 8px;
+$rounded-circle: 50%;
+
+$small-mobile: 355px;
+$mobile: 743px;
+$tablet: 1151px;
+
+
+@mixin horizontal-spacing($spacing){
+  > * {
+    &:not(:first-child){
+      margin-left: $spacing;
+    }
+  }
+}
+
+@mixin vertical-spacing($spacing){
+  > * {
+    &:not(:first-child){
+      margin-top: $spacing;
+    }
+  }
+}
+
+
+@mixin bg-schema($bg, $color){
+  background-color: $bg;
+  color: $color;
+}
+
+
+@mixin size($w, $h){
+  width: $w;
+  height: $h;
+}
+
+
+@mixin media-query($breakpoint) {
+  @media screen and (max-width: $breakpoint){
+    @content;
+  }
+}
+
+//(336 * 3) + (2 * 32) + (40): 1112 
+//336 * 2 + 32 + 40: 
+//desktop = 
+
+@mixin margin-lateral{
+  margin: 0px calc(50vw - 536px);
+  @include media-query($tablet){
+    margin: 0px Min(calc(50vw - 352px), 10%);
+  }  
+  @include media-query($mobile){
+    margin: 0px Min(calc(50vw - 168px), 10%);
+  }  
+  @include media-query($small-mobile){
+    margin: 0px 10px;
+  }
+}
+
+
+@mixin padding-lateral{
+  padding: 0px calc(50vw - 536px);
+  @include media-query($tablet){
+    padding: 0px Min(calc(50vw - 352px), 10%);
+  }  
+  @include media-query($mobile){
+    padding: 0px Min(calc(50vw - 168px), 10%);
+  }  
+  @include media-query($small-mobile){
+    padding: 0px 10px;
+  } 
+}
+
+@mixin hide-on($breakpoint){
+  @include media-query($breakpoint){
+    display: none;
+  }
+}
+
+@mixin flex-space-betwen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-space-around{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+@mixin cta-primary{
+  background-color: $primary;
+  color: $light;
+  border-radius: $rounded1;
+  cursor: pointer;
+  font-weight: 500;  
+  padding: 8px 15px;
+}
+
+@mixin cta-secondary{
+  background-color: $light;
+  color: $primary;
+  border-radius: $rounded1;
+  border: 1px solid $primary;
+  cursor: pointer;
+  font-weight: 500;  
+  padding: 8px 15px;
+}
+
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Helvetica, sans-serif;
+  background-color: $color-body-background;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.info-social-media{
+  @include flex-space-betwen;
+  width: 120px;
+}
+
+
+.info-mail, .info-phone{
+  @include flex-space-betwen;
+  @include horizontal-spacing($spacing2);
+  line-height: 32px;  
+}
+
+.logo{
+  font-size: 26px;
+  color: $primary;
+  font-weight: 900;
+}
+
+
+
+
+
+
+.infobar {
+  @include flex-space-betwen;
+  @include padding-lateral;
+  @include hide-on($tablet);
+  @include bg-schema($dark, $light);
+  @include size(100%, 40px);
+  font-size: 0.9em;
+
+  .info-container{
+    @include flex-space-betwen;
+    @include horizontal-spacing($spacing5);
+  }
+}
+
+.navbar{
+  @include flex-space-betwen;
+  @include padding-lateral;
+  @include size(100%, $height-navbar);
+  @include bg-schema($light, $dark);
+  
+  .close-btn{
+    display: none;
+  }
+
+  .links{
+    @include horizontal-spacing($spacing5);
+    margin-left: $spacing5;
+  }
+
+  .cta{
+    @include cta-secondary;
+  }
+
+  @include media-query($tablet){  
+    @include bg-schema($dark, $light);
+    @include size(80%, 100vh);
+    position: fixed;
+    flex-direction: column;    
+    justify-content: space-evenly;
+    overflow: hidden;
+    
+    &.closed {
+      width: 0px;
+      transition: width 0s;
+    }
+
+    .close-btn{
+      display: unset;
+      position: absolute;
+      top: $spacing3;
+      right: $spacing3;      
+    }
+
+    .links {
+      @include flex-space-betwen;
+      @include horizontal-spacing(0px);
+      @include vertical-spacing($spacing4);
+
+      flex-direction: column;
+      margin-left: 0px;
+      margin-top: $spacing2;
+    }
+
+    .cta{
+      @include cta-primary;
+      border: none;      
+    }
+  }
+}
+
+
+
+
+
+
