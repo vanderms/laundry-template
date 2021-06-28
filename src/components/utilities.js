@@ -43,19 +43,36 @@ export function SocialMediaInfo(){
 }
 
 
-export function CloseIcon({ className }){
+export function CloseIcon({ className, onClick }){
   return(
-    <svg className={className ? className : ''} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <svg onClick={onClick} tabIndex='1' className={className ? className : ''} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
       <path id="Icon_material-close" data-name="Icon material-close" d="M27.5,9.514,25.486,7.5,17.5,15.486,9.514,7.5,7.5,9.514,15.486,17.5,7.5,25.486,9.514,27.5,17.5,19.514,25.486,27.5,27.5,25.486,19.514,17.5Z" transform="translate(-7.5 -7.5)" fill="#fff"/>
     </svg>
   );
 }
 
 
-export function MenuIcon({ className }){
+export function MenuIcon({ className, onClick }){
   return (
-    <svg className= {className ? className : ''} xmlns="http://www.w3.org/2000/svg" width="30" height="20" viewBox="0 0 30 20">
+    <svg onClick={onClick} tabIndex='1' className= {className ? className : ''} xmlns="http://www.w3.org/2000/svg" width="30" height="20" viewBox="0 0 30 20">
       <path id="Icon_material-menu" data-name="Icon material-menu" d="M4.5,29h30V25.667H4.5Zm0-8.333h30V17.333H4.5ZM4.5,9v3.333h30V9Z" transform="translate(-4.5 -9)" fill="#fff"/>
     </svg>
+  );
+}
+
+
+export function Logo(){
+  return (
+    <div className="logo">LAUNDRY</div>
+  );
+}
+
+
+export function BackDrop({className, onClick}){
+  return (
+    <div 
+      className={`backdrop ${className ? className : ''}`} 
+      onClick = { onClick }  
+    ></div>
   );
 }

@@ -131,6 +131,7 @@ $tablet: 1151px;
 }
 
 
+
 *{
   box-sizing: border-box;
 }
@@ -139,6 +140,10 @@ body {
   margin: 0;
   font-family: 'Poppins', Helvetica, sans-serif;
   background-color: $color-body-background;
+}
+
+main{
+  min-height: calc(100vh - #{$height-navbar} - #{$height-infobar});
 }
 
 a {
@@ -151,10 +156,11 @@ a {
   width: 120px;
 }
 
-
-.info-mail, .info-phone{
-  @include flex-space-betwen;
+.info-mail, .info-phone{  
   @include horizontal-spacing($spacing2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   line-height: 32px;  
 }
 
@@ -165,8 +171,13 @@ a {
 }
 
 
-
-
+.backdrop{
+  @include size(100vw, 100vh);
+  position: fixed;
+  top: 0px;
+  background-color: $dark;
+  opacity: 0.8;
+}
 
 
 .infobar {
@@ -183,11 +194,13 @@ a {
   }
 }
 
+
 .navbar{
   @include flex-space-betwen;
   @include padding-lateral;
   @include size(100%, $height-navbar);
   @include bg-schema($light, $dark);
+  z-index: 10;
   
   .close-btn{
     display: none;
@@ -204,11 +217,13 @@ a {
 
   @include media-query($tablet){  
     @include bg-schema($dark, $light);
-    @include size(80%, 100vh);
+    @include size(85%, 100vh);
+    padding: $spacing3 0px;
     position: fixed;
     flex-direction: column;    
     justify-content: space-evenly;
     overflow: hidden;
+    transition: width 0.25s;
     
     &.closed {
       width: 0px;
@@ -240,7 +255,54 @@ a {
 }
 
 
+.sidebar-menu{
+  @include size(100%, $height-sidebar-menu);
+  background-color: $dark;
+  display: none;
 
+  @include media-query($tablet){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .menu-btn{
+      display: none;
+      position: absolute;
+      right: $spacing3;
+    }
+
+    .backdrop{
+      z-index: 9;
+    }
+
+    &.closed{
+      .menu-btn{
+        display: unset;
+      }
+
+      .backdrop{
+        display: none;
+      }
+    }
+  }
+}
+
+
+.footer{  
+  @include flex-space-betwen;
+  @include size(100%, 260px);
+  @include bg-schema($dark, $light);
+  flex-direction: column;  
+  padding-top: $spacing4;  
+  
+  .info-container{
+    @include flex-space-betwen;
+    flex-direction: column;
+    .info-social-media{
+      margin-top: $spacing1;
+    }
+  }
+}
 
 
 
