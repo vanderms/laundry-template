@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/laundry-template/static/css/main.14166fed.chunk.css",
-    "main.js": "/laundry-template/static/js/main.874bc691.chunk.js",
-    "main.js.map": "/laundry-template/static/js/main.874bc691.chunk.js.map",
+    "main.css": "/laundry-template/static/css/main.0be6cc25.chunk.css",
+    "main.js": "/laundry-template/static/js/main.fb1cbbfa.chunk.js",
+    "main.js.map": "/laundry-template/static/js/main.fb1cbbfa.chunk.js.map",
     "runtime-main.js": "/laundry-template/static/js/runtime-main.009f2895.js",
     "runtime-main.js.map": "/laundry-template/static/js/runtime-main.009f2895.js.map",
     "static/js/2.c0453454.chunk.js": "/laundry-template/static/js/2.c0453454.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.18a94d17.chunk.js": "/laundry-template/static/js/3.18a94d17.chunk.js",
     "static/js/3.18a94d17.chunk.js.map": "/laundry-template/static/js/3.18a94d17.chunk.js.map",
     "index.html": "/laundry-template/index.html",
-    "static/css/main.14166fed.chunk.css.map": "/laundry-template/static/css/main.14166fed.chunk.css.map",
+    "static/css/main.0be6cc25.chunk.css.map": "/laundry-template/static/css/main.0be6cc25.chunk.css.map",
     "static/js/2.c0453454.chunk.js.LICENSE.txt": "/laundry-template/static/js/2.c0453454.chunk.js.LICENSE.txt",
-    "static/media/cover.054caef1.jpg": "/laundry-template/static/media/cover.054caef1.jpg"
+    "static/media/index.scss": "/laundry-template/static/media/cover.054caef1.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.009f2895.js",
     "static/js/2.c0453454.chunk.js",
-    "static/css/main.14166fed.chunk.css",
-    "static/js/main.874bc691.chunk.js"
+    "static/css/main.0be6cc25.chunk.css",
+    "static/js/main.fb1cbbfa.chunk.js"
   ]
 }
