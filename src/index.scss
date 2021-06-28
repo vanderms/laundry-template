@@ -61,6 +61,13 @@ $tablet: 1151px;
   }
 }
 
+@mixin main-height(){
+  height: calc(100vh - #{$height-navbar} - #{$height-infobar});
+  @include media-query($tablet){
+    height: calc(100vh - #{$height-sidebar-menu});
+  }
+}
+
 //(336 * 3) + (2 * 32) + (40): 1112 
 //336 * 2 + 32 + 40: 
 //desktop = 
@@ -98,18 +105,11 @@ $tablet: 1151px;
   }
 }
 
-@mixin flex-space-betwen {
+@mixin flex-space($justify) {
   display: flex;
-  justify-content: space-between;
+  justify-content: $justify;
   align-items: center;
 }
-
-@mixin flex-space-around{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
 
 @mixin cta-primary{
   background-color: $primary;
@@ -131,7 +131,6 @@ $tablet: 1151px;
 }
 
 
-
 *{
   box-sizing: border-box;
 }
@@ -143,7 +142,7 @@ body {
 }
 
 main{
-  min-height: calc(100vh - #{$height-navbar} - #{$height-infobar});
+  @include main-height;
 }
 
 a {
@@ -151,10 +150,23 @@ a {
   text-decoration: none;
 }
 
-.info-social-media{
-  @include flex-space-betwen;
-  width: 120px;
+h1{
+  font-size: 42px;
+  font-weight: 900;
+  margin: 10px 0px;
 }
+
+
+h4{
+  font-size: 1em;
+  font-weight: 500;
+  margin: 10px 0px;
+}
+
+.info-social-media{
+  @include flex-space(space-between);
+  width: 120px;
+} 
 
 .info-mail, .info-phone{  
   @include horizontal-spacing($spacing2);
@@ -179,9 +191,34 @@ a {
   opacity: 0.8;
 }
 
+.background-image-component {
+  @include size(100%, 100%);
+  background-color: #888;
+  display: flex;   
+  align-items: center;
+  overflow: hidden;
+ 
+  &.by-width {
+    flex-direction: column;    
+    img { 
+       @include size(100%, auto);      
+    }   
+  }
+
+  &.by-height {
+    img { 
+       @include size(auto, 100%);      
+    }
+  }
+  &.center{ justify-content: center; }
+  &.start{ justify-content: flex-start; }
+  &.end{ justify-content: flex-end; }   
+
+}
+
 
 .infobar {
-  @include flex-space-betwen;
+  @include flex-space(space-between);
   @include padding-lateral;
   @include hide-on($tablet);
   @include bg-schema($dark, $light);
@@ -189,19 +226,20 @@ a {
   font-size: 0.9em;
 
   .info-container{
-    @include flex-space-betwen;
+    @include flex-space(space-between);
     @include horizontal-spacing($spacing5);
   }
 }
 
 
 .navbar{
-  @include flex-space-betwen;
+  @include flex-space(space-between);
   @include padding-lateral;
   @include size(100%, $height-navbar);
   @include bg-schema($light, $dark);
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
   z-index: 10;
-  
+
   .close-btn{
     display: none;
   }
@@ -214,11 +252,17 @@ a {
   .cta{
     @include cta-secondary;
   }
+  
+  &.fixed{
+    position: fixed;
+    top: 0px;
+  }
 
   @include media-query($tablet){  
     @include bg-schema($dark, $light);
     @include size(85%, 100vh);
     padding: $spacing3 0px;
+    box-shadow: unset;
     position: fixed;
     flex-direction: column;    
     justify-content: space-evenly;
@@ -238,7 +282,7 @@ a {
     }
 
     .links {
-      @include flex-space-betwen;
+      @include flex-space(space-between);
       @include horizontal-spacing(0px);
       @include vertical-spacing($spacing4);
 
@@ -254,11 +298,13 @@ a {
   }
 }
 
-
 .sidebar-menu{
   @include size(100%, $height-sidebar-menu);
   background-color: $dark;
   display: none;
+  position: fixed;
+  top: 0px;
+  
 
   @include media-query($tablet){
     display: flex;
@@ -287,16 +333,31 @@ a {
   }
 }
 
+.navbar-placeholder{
+  @include size(100%, $height-navbar);  
+  background-color: blue;
+  display: none;
+  &.fixed{
+    display: block;
+  }
+
+  @include media-query($tablet){
+    height: $height-sidebar-menu;
+    display: block;
+  }
+
+}
+
 
 .footer{  
-  @include flex-space-betwen;
+  @include flex-space(space-between);
   @include size(100%, 260px);
   @include bg-schema($dark, $light);
   flex-direction: column;  
   padding-top: $spacing4;  
   
   .info-container{
-    @include flex-space-betwen;
+    @include flex-space(space-between);
     flex-direction: column;
     .info-social-media{
       margin-top: $spacing1;
@@ -305,4 +366,30 @@ a {
 }
 
 
+.section-cover{
+ @include main-height;
+  display: flex;  
 
+  .info-container{
+    @include padding-lateral;
+    @include flex-space(space-evenly);
+    flex-direction: column;
+    padding-right: 0px;
+    width: 50%;
+    
+    h4{
+      width: 90%;
+    }
+
+    form, .header{
+      width: 100%;
+    }
+
+
+  }
+
+  .image-container {
+    @include size(50%, 100%);
+    padding-left: $spacing1;
+  }
+}

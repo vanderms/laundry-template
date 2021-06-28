@@ -76,3 +76,17 @@ export function BackDrop({className, onClick}){
     ></div>
   );
 }
+
+
+export function BackgroundImage({src, alt, orientation, alignment}){
+
+  let classes = "background-image-component ";
+  classes += (orientation === 'by-width ' ? 'by-width ' : 'by-height ');
+  classes += (alignment ? alignment : 'center ');
+
+  return (
+    <div className={classes}>
+      <img src={src} alt={alt}/>
+    </div>
+  );
+}
