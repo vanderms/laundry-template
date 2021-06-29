@@ -1,7 +1,3 @@
-import { BackgroundImage } from './utilities';
-import coverImage from '../assets/cover.jpg';
-
-
 export default function Cover(){
 
   return (
@@ -19,14 +15,7 @@ export default function Cover(){
         </div>
       </form>
     </div>
-    <div className="image-container">
-     <BackgroundImage
-      src={coverImage}
-      alt='foto de uma mulher colocando roupas em um cabide'
-      orientation='by-height'
-      alignment='end'
-     />
-    </div>
+    <div className="overlay"></div>
   </section>
   );
 }

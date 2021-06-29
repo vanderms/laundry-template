@@ -62,9 +62,9 @@ $tablet: 1151px;
 }
 
 @mixin main-height(){
-  height: calc(100vh - #{$height-navbar} - #{$height-infobar});
+  height: Min(628px, calc(100vh - #{$height-navbar} - #{$height-infobar}));
   @include media-query($tablet){
-    height: calc(100vh - #{$height-sidebar-menu});
+    height: Min(628px, calc(100vh - #{$height-sidebar-menu}));
   }
 }
 
@@ -130,7 +130,6 @@ $tablet: 1151px;
   padding: 8px 15px;
 }
 
-
 *{
   box-sizing: border-box;
 }
@@ -151,15 +150,15 @@ a {
 }
 
 h1{
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 900;
   margin: 10px 0px;
 }
 
 
 h4{
-  font-size: 1em;
-  font-weight: 500;
+  font-size: 1.1em;
+  font-weight: 400;
   margin: 10px 0px;
 }
 
@@ -191,30 +190,8 @@ h4{
   opacity: 0.8;
 }
 
-.background-image-component {
-  @include size(100%, 100%);
-  background-color: #888;
-  display: flex;   
-  align-items: center;
-  overflow: hidden;
- 
-  &.by-width {
-    flex-direction: column;    
-    img { 
-       @include size(100%, auto);      
-    }   
-  }
 
-  &.by-height {
-    img { 
-       @include size(auto, 100%);      
-    }
-  }
-  &.center{ justify-content: center; }
-  &.start{ justify-content: flex-start; }
-  &.end{ justify-content: flex-end; }   
 
-}
 
 
 .infobar {
@@ -367,29 +344,72 @@ h4{
 
 
 .section-cover{
- @include main-height;
-  display: flex;  
+  @include main-height;
+  @include padding-lateral;
+  position: relative;
+  background-image: url('./assets/cover.jpg');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
 
-  .info-container{
-    @include padding-lateral;
+  .info-container {   
     @include flex-space(space-evenly);
+    align-items: flex-start;
     flex-direction: column;
-    padding-right: 0px;
-    width: 50%;
+    position: relative;   
+    width: 50vw;
+    height: 100%;
+    z-index: 2;
+    color: $light;
     
     h4{
-      width: 90%;
+      width: 40vw;
     }
 
     form, .header{
       width: 100%;
     }
 
+    form{
+      .text{
+        font-size: 0.9em;
+      }
 
+      .input-block{
+        margin-top: $spacing1;
+      }
+      input{
+        padding: 8px 12px;
+        height: 42px;
+        font-family: inherit;
+        font-size: 1em;  
+           
+      }
+      input[type=text]{
+        border: none;       
+        border-radius: 5px 0px 0px 5px;      
+      }
+
+      input[type = submit]{
+        background-color: $primary;
+        border-radius: 0px 5px 5px 0px;
+        color: white;
+        border: none;   
+        cursor: pointer;
+        font-weight: 500;
+      }
+    }
   }
 
-  .image-container {
-    @include size(50%, 100%);
-    padding-left: $spacing1;
+  .overlay{
+    @include size(100%, 100%);
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1;    
   }
+
+
 }
