@@ -1,5 +1,6 @@
 import './cover.scss';
 import { useState } from 'react';
+import { SearchIcon } from '../utilities/utilities';
 
 
 export default function Cover(){
@@ -19,11 +20,11 @@ export default function Cover(){
         <h1>A SUA LAVANDERIA EM SÃO PAULO</h1>
         <h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</h4>
       </header>  
-      <form onSubmit={handleSubmit}>
+      <form id='search-form' onSubmit={handleSubmit}>
         <div className="text">Confira se os nossos serviços estão disponíveis na sua região </div>
         <div className="input-block">
           <input type="text" value={ cep } onChange={(e)=> setCep(e.target.value)}/>
-          <input type="submit" value="CONSULTAR"/>
+          <button type='submit' form='search-form'><SearchIcon/></button>          
         </div>
       </form>
     </div>

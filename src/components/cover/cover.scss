@@ -37,19 +37,31 @@
       }
 
       .input-block{
+        @include flex-space(flex-start);
         margin-top: $spacing1;
       }
+
       input{
-        padding: 8px 12px;
+        padding: 6px 10px;
         height: 42px;
         font-family: inherit;
         font-size: 1em;  
-           
-      }
-      input[type=text]{
         border: none;       
-        border-radius: $rounded1 0px 0px $rounded1;      
+        border-radius: $rounded1 0px 0px $rounded1;             
       }
+      
+      button{        
+        @include cta-primary;  
+        padding: 11px 20px;              
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+      }
+           
+      
 
       input[type = submit]{
         background-color: $primary;
@@ -88,6 +100,10 @@
 
       form{
         text-align: center;
+
+        .input-block{
+          justify-content: center;
+        }
       }
     }
   }
