@@ -77,4 +77,60 @@ export function BackDrop({className, onClick}){
   );
 }
 
+export function SectionHeader({ title, subtitle, highlight }){
+  
+  let heading = <h2>{ title }</h2>;
 
+  if(highlight){
+   
+  }
+
+  return(
+    <header className="section-header">
+      { heading }
+      <div className='subtitle'>{ subtitle }</div>
+    </header>
+  );
+}
+
+export function TruckIcon(){
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" width="62.5" height="50" viewBox="0 0 62.5 50">
+      <path id="Icon_awesome-truck" data-name="Icon awesome-truck" d="M60.938,34.375H59.375V23.818A4.688,4.688,0,0,0,58,20.508l-9.756-9.756a4.688,4.688,0,0,0-3.311-1.377H40.625V4.688A4.689,4.689,0,0,0,35.938,0H4.688A4.689,4.689,0,0,0,0,4.688v31.25a4.689,4.689,0,0,0,4.688,4.687H6.25a9.375,9.375,0,1,0,18.75,0H37.5a9.375,9.375,0,0,0,18.75,0h4.688A1.567,1.567,0,0,0,62.5,39.063V35.938A1.567,1.567,0,0,0,60.938,34.375ZM15.625,45.313a4.687,4.687,0,1,1,4.687-4.687A4.689,4.689,0,0,1,15.625,45.313Zm31.25,0a4.687,4.687,0,1,1,4.688-4.687A4.689,4.689,0,0,1,46.875,45.313ZM54.688,25H40.625V14.063h4.307l9.756,9.756Z" fill="#fff"/>
+    </svg>
+  )
+}
+
+
+export function CheckIcon(){
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+      <path id="Icon_awesome-check-square" data-name="Icon awesome-check-square" d="M44.643,52.25H5.357A5.357,5.357,0,0,1,0,46.893V7.607A5.357,5.357,0,0,1,5.357,2.25H44.643A5.357,5.357,0,0,1,50,7.607V46.893A5.357,5.357,0,0,1,44.643,52.25ZM21.8,41.306,42.334,20.77a1.786,1.786,0,0,0,0-2.525L39.809,15.72a1.786,1.786,0,0,0-2.525,0L20.536,32.467l-7.819-7.819a1.786,1.786,0,0,0-2.525,0L7.666,27.173a1.786,1.786,0,0,0,0,2.525L19.273,41.306A1.786,1.786,0,0,0,21.8,41.306Z" transform="translate(0 -2.25)" fill="#fff"/>
+    </svg>
+  );
+}
+
+
+export function CreditCardIcon(){
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="64.286" height="50" viewBox="0 0 64.286 50">
+      <path id="Icon_awesome-credit-card" data-name="Icon awesome-credit-card" d="M0,46.893A5.359,5.359,0,0,0,5.357,52.25H58.929a5.359,5.359,0,0,0,5.357-5.357V27.25H0ZM21.429,39.3a1.343,1.343,0,0,1,1.339-1.339H37.946A1.343,1.343,0,0,1,39.286,39.3v4.464a1.343,1.343,0,0,1-1.339,1.339H22.768a1.343,1.343,0,0,1-1.339-1.339Zm-14.286,0a1.343,1.343,0,0,1,1.339-1.339h8.036A1.343,1.343,0,0,1,17.857,39.3v4.464a1.343,1.343,0,0,1-1.339,1.339H8.482a1.343,1.343,0,0,1-1.339-1.339Zm57.143-31.7v5.357H0V7.607A5.359,5.359,0,0,1,5.357,2.25H58.929A5.359,5.359,0,0,1,64.286,7.607Z" transform="translate(0 -2.25)" fill="#fff"/>
+    </svg>
+  );
+}
+
+
+export function FeatureCard({Icon, title, text}){
+
+  return(
+    <div className="feature-card">
+      <div className="circle">
+        <Icon/>
+      </div>
+      <div className="text">
+        <h3>{ title }</h3>
+        <p>{ text }</p>
+      </div>
+    </div>
+  );
+}

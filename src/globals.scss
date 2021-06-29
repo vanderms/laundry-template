@@ -62,38 +62,49 @@ $tablet: 1151px;
 }
 
 @mixin main-height(){
-  height: Min(628px, calc(100vh - #{$height-navbar} - #{$height-infobar}));
+  height: Min(728px, calc(100vh - #{$height-navbar} - #{$height-infobar}));
   @include media-query($tablet){
-    height: Min(628px, calc(100vh - #{$height-sidebar-menu}));
+    height: Min(728px, calc(100vh - #{$height-sidebar-menu}));
   }
 }
 
 
 
 @mixin margin-lateral{
-  margin: 0px calc(50vw - 536px);
+  margin-right: calc(50vw - 536px);
+  margin-left: calc(50vw - 536px);
+
   @include media-query($tablet){
-    margin: 0px Min(calc(50vw - 352px), 10%);
+    margin-right: Min(calc(50vw - 352px), 10%);
+    margin-left: Min(calc(50vw - 352px), 10%);
   }  
+
   @include media-query($mobile){
-    margin: 0px Min(calc(50vw - 168px), 10%);
+    margin-right: Min(calc(50vw - 168px), 10%);
+    margin-left: Min(calc(50vw - 168px), 10%);
   }  
+
   @include media-query($small-mobile){
-    margin: 0px 10px;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 }
 
 
 @mixin padding-lateral{
-  padding: 0px calc(50vw - 536px);
+  padding-right: calc(50vw - 536px);
+  padding-left: calc(50vw - 536px);
   @include media-query($tablet){
-    padding: 0px Min(calc(50vw - 352px), 10%);
+    padding-right: Min(calc(50vw - 352px), 10%);
+    padding-left: Min(calc(50vw - 352px), 10%);
   }  
   @include media-query($mobile){
-    padding: 0px Min(calc(50vw - 168px), 10%);
+    padding-right: Min(calc(50vw - 168px), 10%);
+    padding-left: Min(calc(50vw - 168px), 10%);
   }  
   @include media-query($small-mobile){
-    padding: 0px 10px;
+    padding-right: 10px;
+    padding-left: 10px;
   } 
 }
 

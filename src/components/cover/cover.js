@@ -1,7 +1,16 @@
 import './cover.scss';
+import { useState } from 'react';
 
 
 export default function Cover(){
+
+  const [cep, setCep] = useState('');
+  console.log(cep);
+
+  function handleSubmit(e){
+    e.preventDefault();
+    setCep('');
+  }
 
   return (
   <section className="section-cover">
@@ -10,10 +19,10 @@ export default function Cover(){
         <h1>A SUA LAVANDERIA EM SÃO PAULO</h1>
         <h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</h4>
       </header>  
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="text">Confira se os nossos serviços estão disponíveis na sua região </div>
         <div className="input-block">
-          <input type="text" />
+          <input type="text" value={ cep } onChange={(e)=> setCep(e.target.value)}/>
           <input type="submit" value="CONSULTAR"/>
         </div>
       </form>

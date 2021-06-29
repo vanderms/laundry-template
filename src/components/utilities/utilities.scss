@@ -28,3 +28,24 @@
   background-color: $dark;
   opacity: 0.8;
 }
+
+
+.feature-card{
+  @include size(310px, 336px);
+  @include bg-schema($light, $dark);
+  @include flex-space(flex-start);
+  flex-direction: column;
+  padding: 25px;
+  border-radius: $rounded1;
+  
+  .circle{
+    @include size(120px, 120px);
+    @include flex-space(center);
+    background-color: $dark;
+    border-radius: $rounded-circle;
+  }
+
+  h3, p{
+    text-align: center;
+  }
+}

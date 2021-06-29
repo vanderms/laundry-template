@@ -12,9 +12,6 @@ body {
   background-color: $color-body-background;
 }
 
-main{
-  @include main-height;
-}
 
 a {
   color: inherit;
@@ -33,6 +30,21 @@ h1{
   }
 }
 
+h2{
+  font-size: 32px;
+  font-weight: 700;
+  margin: 10px 0px;
+  @include media-query($tablet){
+    font-size: 26px;
+  }
+  @include media-query($mobile){
+    font-size: 22px;
+  }
+}
+
+h3{
+  font-size: 18px;
+}
 
 h4{
   font-size: 1.1em;
@@ -40,6 +52,8 @@ h4{
   margin: 10px 0px;
 
 }
+
+
 
 
 .infobar {
@@ -70,5 +84,40 @@ h4{
     .info-social-media{
       margin-top: $spacing1;
     }
+  }
+}
+
+
+.section{
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.section-header{
+  margin: 0px auto 80px auto;
+  width: 60vw; 
+  text-align: center;
+
+  @include media-query($tablet){
+    width: 80vw;
+  }
+
+  @include media-query($mobile){
+    .subtitle{
+      display: none;
+    }
+  }
+
+}
+
+.section-features{
+  @include bg-schema($primary, $light);
+  @include padding-lateral;
+
+  .cards-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 312px);   
+    justify-content: space-around;
+    row-gap: $spacing5;
   }
 }
