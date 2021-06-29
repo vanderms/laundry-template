@@ -1,3 +1,6 @@
+import './cover.scss';
+
+
 export default function Cover(){
 
   return (

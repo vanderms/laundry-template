@@ -1,0 +1,30 @@
+@import '../../globals.scss';
+
+
+.info-social-media{
+  @include flex-space(space-between);
+  width: 120px;
+} 
+
+.info-mail, .info-phone{  
+  @include horizontal-spacing($spacing2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 32px;  
+}
+
+.logo{
+  font-size: 26px;
+  color: $primary;
+  font-weight: 900;
+}
+
+
+.backdrop{
+  @include size(100vw, 100vh);
+  position: fixed;
+  top: 0px;
+  background-color: $dark;
+  opacity: 0.8;
+}

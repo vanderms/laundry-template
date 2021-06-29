@@ -1,0 +1,104 @@
+@import '../../globals.scss';
+
+
+.section-cover{
+  
+  @include main-height;
+  @include padding-lateral;
+  position: relative;
+
+  background-image: url('../../assets/cover.jpg');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+
+  .info-container {
+
+    @include flex-space(space-evenly);
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;   
+    width: 50vw;
+    height: 100%;
+    z-index: 2;
+    color: $light;
+    
+    h4{
+      width: 40vw;
+    }
+
+    form, .header{
+      width: 100%;
+    }
+
+    form{
+      .text{
+        font-size: 0.9em;
+      }
+
+      .input-block{
+        margin-top: $spacing1;
+      }
+      input{
+        padding: 8px 12px;
+        height: 42px;
+        font-family: inherit;
+        font-size: 1em;  
+           
+      }
+      input[type=text]{
+        border: none;       
+        border-radius: $rounded1 0px 0px $rounded1;      
+      }
+
+      input[type = submit]{
+        background-color: $primary;
+        border-radius: 0px $rounded1 $rounded1 0px;
+        color: white;
+        border: none;   
+        cursor: pointer;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .overlay{
+    @include size(100%, 100%);
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1;    
+  }
+
+  @include media-query($tablet){
+    .info-container{
+      width: 80%;
+      margin: auto;
+
+      header{
+        text-align: center;
+
+        h4 {
+          width: 100%;
+          padding: 0px 20px;        
+        }
+      }
+
+      form{
+        text-align: center;
+      }
+    }
+  }
+
+  @include media-query($mobile){
+    .info-container{
+      width: 100%;
+
+      input[type=text]{
+        width: 175px;    
+      }
+    }
+  }
+}

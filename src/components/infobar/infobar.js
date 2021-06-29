@@ -1,4 +1,4 @@
-import { PhoneInfo, MailInfo, SocialMediaInfo } from './utilities';
+import { PhoneInfo, MailInfo, SocialMediaInfo } from '../utilities/utilities';
 
 export default function Infobar(){
   return(

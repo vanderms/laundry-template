@@ -1,4 +1,4 @@
-import {Logo, MailInfo, PhoneInfo, SocialMediaInfo } from './utilities';
+import {Logo, MailInfo, PhoneInfo, SocialMediaInfo } from '../utilities/utilities';
 
 export default function Footer(){
   const year = new Date().getFullYear();   

@@ -1,3 +1,4 @@
+import './utilities.scss';
 
 
 export function PhoneInfo(){
@@ -10,7 +11,6 @@ export function PhoneInfo(){
     </div>
   );
 }
-
 
 export function MailInfo(){
 

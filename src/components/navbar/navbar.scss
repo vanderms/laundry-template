@@ -1,0 +1,117 @@
+@import '../../globals.scss';
+
+.navbar{
+  @include flex-space(space-between);
+  @include padding-lateral;
+  @include size(100%, $height-navbar);
+  @include bg-schema($light, $dark);
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+
+  .close-btn{
+    display: none;
+  }
+
+  .links{
+    @include horizontal-spacing($spacing5);
+    margin-left: $spacing5;
+  }
+
+  .cta{
+    @include cta-secondary;
+  }
+  
+  &.fixed{
+    position: fixed;
+    top: 0px;
+  }
+
+  @include media-query($tablet){  
+    @include bg-schema($dark, $light);
+    @include size(85%, 100vh);
+    padding: $spacing3 0px;
+    box-shadow: unset;
+    position: fixed;
+    flex-direction: column;    
+    justify-content: space-evenly;
+    overflow: hidden;
+    transition: width 0.25s;
+    
+    &.closed {
+      width: 0px;
+      transition: width 0s;
+    }
+
+    .close-btn{
+      display: unset;
+      position: absolute;
+      top: $spacing3;
+      right: $spacing3;      
+    }
+
+    .links {
+      @include flex-space(space-between);
+      @include horizontal-spacing(0px);
+      @include vertical-spacing($spacing4);
+
+      flex-direction: column;
+      margin-left: 0px;
+      margin-top: $spacing2;
+    }
+
+    .cta{
+      @include cta-primary;
+      border: none;      
+    }
+  }
+}
+
+.sidebar-menu{
+  @include size(100%, $height-sidebar-menu);
+  background-color: $dark;
+  display: none;
+  position: fixed;
+  top: 0px;
+  
+
+  @include media-query($tablet){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .menu-btn{
+      display: none;
+      position: absolute;
+      right: $spacing3;
+    }
+
+    .backdrop{
+      z-index: 9;
+    }
+
+    &.closed{
+      .menu-btn{
+        display: unset;
+      }
+
+      .backdrop{
+        display: none;
+      }
+    }
+  }
+}
+
+.navbar-placeholder{
+  @include size(100%, $height-navbar);  
+  background-color: blue;
+  display: none;
+  &.fixed{
+    display: block;
+  }
+
+  @include media-query($tablet){
+    height: $height-sidebar-menu;
+    display: block;
+  }
+
+}

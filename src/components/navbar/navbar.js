@@ -1,6 +1,7 @@
+import './navbar.scss';
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { CloseIcon, MenuIcon, Logo, BackDrop } from './utilities';
+import { CloseIcon, MenuIcon, Logo, BackDrop } from '../utilities/utilities';
 
 
 function getClass(name, closed, fixed){

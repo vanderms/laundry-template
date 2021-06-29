@@ -1,0 +1,130 @@
+
+
+$primary: #006AF3;
+$light: #fff;
+$dark: #000;
+$color-body-background: #E6E6E6;
+
+$height-navbar: 80px;
+$height-sidebar-menu: 56px;
+$height-infobar: 40px;
+
+$spacing1: 8px;
+$spacing2: 13px;
+$spacing3: 21px;
+$spacing4: 34px;
+$spacing5: 55px;
+$spacing6: 89px;
+$spacing7: 144px;
+
+$rounded1: 5px;
+$rounded2: 8px;
+$rounded-circle: 50%;
+
+$small-mobile: 355px;
+$mobile: 743px;
+$tablet: 1151px;
+
+
+@mixin horizontal-spacing($spacing){
+  > * {
+    &:not(:first-child){
+      margin-left: $spacing;
+    }
+  }
+}
+
+@mixin vertical-spacing($spacing){
+  > * {
+    &:not(:first-child){
+      margin-top: $spacing;
+    }
+  }
+}
+
+
+@mixin bg-schema($bg, $color){
+  background-color: $bg;
+  color: $color;
+}
+
+
+@mixin size($w, $h){
+  width: $w;
+  height: $h;
+}
+
+
+@mixin media-query($breakpoint) {
+  @media screen and (max-width: $breakpoint){
+    @content;
+  }
+}
+
+@mixin main-height(){
+  height: Min(628px, calc(100vh - #{$height-navbar} - #{$height-infobar}));
+  @include media-query($tablet){
+    height: Min(628px, calc(100vh - #{$height-sidebar-menu}));
+  }
+}
+
+
+
+@mixin margin-lateral{
+  margin: 0px calc(50vw - 536px);
+  @include media-query($tablet){
+    margin: 0px Min(calc(50vw - 352px), 10%);
+  }  
+  @include media-query($mobile){
+    margin: 0px Min(calc(50vw - 168px), 10%);
+  }  
+  @include media-query($small-mobile){
+    margin: 0px 10px;
+  }
+}
+
+
+@mixin padding-lateral{
+  padding: 0px calc(50vw - 536px);
+  @include media-query($tablet){
+    padding: 0px Min(calc(50vw - 352px), 10%);
+  }  
+  @include media-query($mobile){
+    padding: 0px Min(calc(50vw - 168px), 10%);
+  }  
+  @include media-query($small-mobile){
+    padding: 0px 10px;
+  } 
+}
+
+@mixin hide-on($breakpoint){
+  @include media-query($breakpoint){
+    display: none;
+  }
+}
+
+@mixin flex-space($justify) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+
+@mixin cta-primary{
+  background-color: $primary;
+  color: $light;
+  border-radius: $rounded1;
+  cursor: pointer;
+  font-weight: 500;  
+  padding: 8px 15px;
+}
+
+@mixin cta-secondary{
+  background-color: $light;
+  color: $primary;
+  border-radius: $rounded1;
+  border: 1px solid $primary;
+  cursor: pointer;
+  font-weight: 500;  
+  padding: 8px 15px;
+}
+
