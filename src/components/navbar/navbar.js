@@ -10,7 +10,7 @@ function getClass(name, closed, fixed){
   return name;
 }
 
-export default function Navbar(){
+export default function Navbar({ handleOpenContactModal }){
   
   const [ closed, setClosed ] = useState(true);
   const [ fixed, setFixed ] = useState(false);
@@ -25,6 +25,11 @@ export default function Navbar(){
     else {
       setFixed(false);
     }
+  }
+
+  function handleContactClicked(){
+    handleOpenContactModal();
+    closeSidebar();
   }
   
   useEffect(()=>{
@@ -41,7 +46,7 @@ export default function Navbar(){
         <Link to='/sobre'>SOBRE</Link>
         <Link to='/servicos'>SERVIÇOS</Link>
         <Link to='/dicas'>DICAS</Link>
-        <span tabIndex='0' className='contato'>CONTATO</span>
+        <span onClick={ handleContactClicked } tabIndex='0' className='contato'>CONTATO</span>
       </div>
       <Link className='cta' to='/'>BAIXE O APP</Link>  
     </nav>

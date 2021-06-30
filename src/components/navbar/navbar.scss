@@ -15,6 +15,10 @@
   .links{
     @include horizontal-spacing($spacing5);
     margin-left: $spacing5;
+
+    .contato{
+      cursor: pointer;
+    }
   }
 
   .cta{
@@ -57,6 +61,8 @@
       flex-direction: column;
       margin-left: 0px;
       margin-top: $spacing2;
+
+      
     }
 
     .cta{

@@ -42,11 +42,7 @@
       }
 
       input{
-        padding: 6px 10px;
-        height: 42px;
-        font-family: inherit;
-        font-size: 1em;  
-        border: none;       
+        @include form-input;
         border-radius: $rounded1 0px 0px $rounded1;             
       }
       
@@ -59,17 +55,6 @@
         border: none;
         border-top-left-radius: 0px;
         border-bottom-left-radius: 0px;
-      }
-           
-      
-
-      input[type = submit]{
-        background-color: $primary;
-        border-radius: 0px $rounded1 $rounded1 0px;
-        color: white;
-        border: none;   
-        cursor: pointer;
-        font-weight: 500;
       }
     }
   }

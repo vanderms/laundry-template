@@ -5,8 +5,7 @@ import { SearchIcon } from '../utilities/utilities';
 
 export default function Cover(){
 
-  const [cep, setCep] = useState('');
-  console.log(cep);
+  const [cep, setCep] = useState('');  
 
   function handleSubmit(e){
     e.preventDefault();

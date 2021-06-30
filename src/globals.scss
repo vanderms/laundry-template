@@ -1,6 +1,6 @@
 
-
 $primary: #006AF3;
+$primary-light: #006FFF;
 $light: #fff;
 $dark: #000;
 $color-body-background: #E6E6E6;
@@ -62,9 +62,9 @@ $tablet: 1151px;
 }
 
 @mixin main-height(){
-  height: Min(728px, calc(100vh - #{$height-navbar} - #{$height-infobar}));
+  height: calc(100vh - #{$height-navbar} - #{$height-infobar});
   @include media-query($tablet){
-    height: Min(728px, calc(100vh - #{$height-sidebar-menu}));
+    height: calc(100vh - #{$height-sidebar-menu});
   }
 }
 
@@ -139,3 +139,11 @@ $tablet: 1151px;
   padding: 8px 15px;
 }
 
+@mixin form-input{
+  padding: 6px 10px;
+  height: 42px;
+  font-family: inherit;
+  font-size: 1em;  
+  border: none;       
+  border-radius: $rounded1;
+}
