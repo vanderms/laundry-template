@@ -1,6 +1,5 @@
-
 $primary: #006AF3;
-$primary-light: #006FFF;
+$primary-light: #1a7dff;
 $light: #fff;
 $dark: #000;
 $color-body-background: #E6E6E6;
@@ -21,9 +20,10 @@ $rounded1: 5px;
 $rounded2: 8px;
 $rounded-circle: 50%;
 
-$small-mobile: 355px;
-$mobile: 743px;
-$tablet: 1151px;
+$laptop: 1499px;
+$tablet: 1079px;
+$mobile: 679px;
+$small-mobile: 359px;
 
 
 @mixin horizontal-spacing($spacing){
@@ -68,44 +68,56 @@ $tablet: 1151px;
   }
 }
 
+$spacing-lateral-full-hd: calc(50% - 650px);
+$spacing-lateral-laptop: 8%;
+$spacing-lateral-tablet: 6%;
+$spacing-lateral-mobile: 20px;
+$spacing-lateral-small-mobile: 4px;
 
 
-@mixin margin-lateral{
-  margin-right: calc(50vw - 536px);
-  margin-left: calc(50vw - 536px);
+@mixin margin-lateral(){
+  margin-right: $spacing-lateral-full-hd;
+  margin-left: $spacing-lateral-full-hd;
 
+  @include media-query($laptop){
+    margin-right: $spacing-lateral-laptop;
+    margin-left: $spacing-lateral-laptop;
+  }  
   @include media-query($tablet){
-    margin-right: Min(calc(50vw - 352px), 10%);
-    margin-left: Min(calc(50vw - 352px), 10%);
-  }  
-
+    margin-right: $spacing-lateral-tablet;
+    margin-left: $spacing-lateral-tablet;
+  }
   @include media-query($mobile){
-    margin-right: Min(calc(50vw - 168px), 10%);
-    margin-left: Min(calc(50vw - 168px), 10%);
-  }  
-
+    margin-right: $spacing-lateral-mobile;
+    margin-left: $spacing-lateral-mobile;
+  }
   @include media-query($small-mobile){
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: $spacing-lateral-small-mobile;
+    margin-left: $spacing-lateral-small-mobile;
   }
 }
 
 
-@mixin padding-lateral{
-  padding-right: calc(50vw - 536px);
-  padding-left: calc(50vw - 536px);
+@mixin padding-lateral(){
+  padding-right: calc(50% - 650px);
+  padding-left: calc(50% - 650px);
+
+  @include media-query($laptop){
+    padding-right: 8%;
+    padding-left: 8%;
+  }  
   @include media-query($tablet){
-    padding-right: Min(calc(50vw - 352px), 10%);
-    padding-left: Min(calc(50vw - 352px), 10%);
-  }  
+    padding-right: 6%;
+    padding-left: 6%;
+  }
   @include media-query($mobile){
-    padding-right: Min(calc(50vw - 168px), 10%);
-    padding-left: Min(calc(50vw - 168px), 10%);
-  }  
+    padding-right: 3%;
+    padding-left: 3%;
+  }
   @include media-query($small-mobile){
-    padding-right: 10px;
-    padding-left: 10px;
-  } 
+    padding-right: 2px;
+    padding-left: 2px;
+  }
 }
 
 @mixin hide-on($breakpoint){

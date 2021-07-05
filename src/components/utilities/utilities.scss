@@ -26,7 +26,7 @@
   position: fixed;
   top: 0px;
   background-color: $dark;
-  opacity: 0.8;
+  opacity: 0.85;  
 }
 
 
@@ -48,4 +48,109 @@
   h3, p{
     text-align: center;
   }
+}
+
+.section-header{
+  margin: 0px auto 80px auto;
+  width: 60vw; 
+  text-align: center;
+
+  h2 {
+    span{
+      color: $primary;
+    }
+  }
+
+  @include media-query($tablet){
+    width: 80vw;
+  }
+
+  @include media-query($mobile){
+    .subtitle{
+      display: none;
+    }
+    margin-bottom: 40px;
+  }
+}
+
+.section-card{
+  @include flex-space(flex-start);
+  height: 540px;
+  &.left{
+    margin-right: $spacing-lateral-full-hd;    
+  }
+  &.right{
+    margin-left: $spacing-lateral-full-hd;
+    flex-direction: row-reverse;
+  }
+
+  .image{
+    @include size(calc(100% - 420px), 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .text-container{
+    @include size(420px, 100%);
+    @include bg-schema($primary, $light);
+    padding: 40px;
+    p{
+      line-height: 1.8;
+    }
+    .cta-container{
+      text-align: right;
+    }
+  }
+
+  @include media-query($laptop){
+    &.left{
+      margin-right: $spacing-lateral-laptop;    
+    }  
+    &.right{
+      margin-left: $spacing-lateral-laptop;
+    }
+  }
+
+  @include media-query($tablet){
+
+    .text-container{
+      @include size(90%, auto);            
+      z-index: 1;  
+      position: relative;
+      .cta-container{
+        margin-top: 35px;
+      }
+    }
+    
+    &.left{
+      margin: 0px;
+      height: auto;
+      flex-direction: column;
+      .text-container{         
+        margin: -80px 5% 0px 5%;       
+      }
+    }  
+    &.right{
+      margin: 0px;
+      height: auto;
+      flex-direction: column-reverse;
+      .text-container{         
+        margin: 0px 5% -80px 5%;       
+      }
+    }
+
+    .image{
+      height: 400px;
+      width: 100%;
+    }
+    
+
+  }
+
+  
+
+
+
+
 }

@@ -1,5 +1,4 @@
-import { SectionHeader, FeatureCard, 
-  TruckIcon, CheckIcon, CreditCardIcon } from "../utilities/utilities";
+import { SectionHeader, FeatureCard } from "../utilities/utilities";
 
 export default function Features(){
   return(
@@ -10,17 +9,17 @@ export default function Features(){
       />
       <div className="cards-container">
         <FeatureCard
-          Icon = { TruckIcon }
+          icon = 'truck'
           title = 'ENTREGA EXPRESSA'
           text = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
         />
         <FeatureCard
-          Icon = { CheckIcon }
+          icon = 'check'
           title = 'QUALIDADE ACIMA DE TUDO'
           text = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
         />
         <FeatureCard
-          Icon = { CreditCardIcon }
+          icon = 'credit-card'
           title = 'PREÇOS BAIXOS'
           text = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
         />

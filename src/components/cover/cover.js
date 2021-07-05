@@ -1,6 +1,6 @@
 import './cover.scss';
 import { useState } from 'react';
-import { SearchIcon } from '../utilities/utilities';
+import Icon from '../icon/icon';
 
 
 export default function Cover(){
@@ -23,7 +23,7 @@ export default function Cover(){
         <div className="text">Confira se os nossos serviços estão disponíveis na sua região </div>
         <div className="input-block">
           <input type="text" value={ cep } onChange={(e)=> setCep(e.target.value)}/>
-          <button type='submit' form='search-form'><SearchIcon/></button>          
+          <button type='submit' form='search-form'><Icon type='search'/></button>          
         </div>
       </form>
     </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BackDrop, CloseIcon } from "../utilities/utilities";
+import { BackDrop, CloseButton } from "../utilities/utilities";
 
 export default function Contato({ show, handleClose }){
   
@@ -18,7 +18,7 @@ export default function Contato({ show, handleClose }){
     <>
     <BackDrop onClick={handleClose} className={`contato-backdrop ${!show ? 'closed' : ''}`}/>
     <section className={`section-contato ${!show ? 'closed' : ''}`}>     
-      <CloseIcon className='close-btn' onClick={handleClose}/>
+      <CloseButton className='close-btn' onClick={handleClose}/>
       <h2>FALE CONOSCO</h2>
       <form onSubmit={handleSubmit}>        
           <label>Nome:

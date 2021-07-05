@@ -19,9 +19,14 @@ a {
 }
 
 h1{
-  font-size: 48px;
+  font-size: 60px;
   font-weight: 900;
   margin: 10px 0px;
+
+  @include media-query($laptop){
+    font-size: 48px;
+  } 
+  
   @include media-query($tablet){
     font-size: 42px;
   }
@@ -53,7 +58,13 @@ h4{
 
 }
 
+.baixe-o-app-background-image{
+  background-image: url('./assets/baixe-o-app.jpg');
+}
 
+.quem-somos-background-image{
+  background-image: url('./assets/quem-somos.jpg');
+}
 
 
 .infobar {
@@ -89,30 +100,13 @@ h4{
 
 
 .section{
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-.section-header{
-  margin: 0px auto 80px auto;
-  width: 60vw; 
-  text-align: center;
-
-  @include media-query($tablet){
-    width: 80vw;
-  }
-
-  @include media-query($mobile){
-    .subtitle{
-      display: none;
-    }
-  }
-
+  padding-top: 80px;  
 }
 
 .section-features{
   @include bg-schema($primary, $light);
   @include padding-lateral;
+  padding-bottom: 100px;
 
   .cards-container{
     display: grid;
@@ -125,7 +119,7 @@ h4{
 .contato-backdrop{
   z-index: 19;  
   &.closed{
-    display: none;
+    top: -100vh;   
   }
 }
 
@@ -139,6 +133,8 @@ h4{
   border-radius: $rounded1;
   z-index: 20;
   padding: 25px 50px;  
+  transition: top 0.35s; 
+  transition-timing-function: ease-out;
 
   @include media-query($mobile){
     width: 310px;
@@ -147,7 +143,8 @@ h4{
   }
   
   &.closed{
-    display: none;
+    top: -480px;
+    transition: top 0s;
   }
 
   .close-btn{
@@ -164,8 +161,7 @@ h4{
 
   
   input, textarea{
-    @include form-input;
-    border: 1px solid #999;
+    @include form-input;  
     width: 100%;  
     margin-bottom: 10px; 
   }
@@ -183,9 +179,14 @@ h4{
     cursor: pointer;
   }
 
-  label{
-    font-weight: 500;
+  label{   
     line-height: 30px;
   }
 
+}
+
+.baixe-o-app-section, .sobre-section{
+  .cta{
+    @include cta-secondary;
+  }
 }
