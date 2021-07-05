@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/laundry-template/static/css/main.4dde34e5.chunk.css",
-    "main.js": "/laundry-template/static/js/main.940b2c37.chunk.js",
-    "main.js.map": "/laundry-template/static/js/main.940b2c37.chunk.js.map",
+    "main.css": "/laundry-template/static/css/main.2d869200.chunk.css",
+    "main.js": "/laundry-template/static/js/main.866dc5d3.chunk.js",
+    "main.js.map": "/laundry-template/static/js/main.866dc5d3.chunk.js.map",
     "runtime-main.js": "/laundry-template/static/js/runtime-main.72e1dbf6.js",
     "runtime-main.js.map": "/laundry-template/static/js/runtime-main.72e1dbf6.js.map",
     "static/js/2.d7d33543.chunk.js": "/laundry-template/static/js/2.d7d33543.chunk.js",
@@ -10,14 +10,15 @@
     "static/js/3.cfb175b4.chunk.js": "/laundry-template/static/js/3.cfb175b4.chunk.js",
     "static/js/3.cfb175b4.chunk.js.map": "/laundry-template/static/js/3.cfb175b4.chunk.js.map",
     "index.html": "/laundry-template/index.html",
-    "static/css/main.4dde34e5.chunk.css.map": "/laundry-template/static/css/main.4dde34e5.chunk.css.map",
+    "static/css/main.2d869200.chunk.css.map": "/laundry-template/static/css/main.2d869200.chunk.css.map",
     "static/js/2.d7d33543.chunk.js.LICENSE.txt": "/laundry-template/static/js/2.d7d33543.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/laundry-template/static/media/quem-somos.a471bdc3.jpg",
     "static/media/cover.scss": "/laundry-template/static/media/cover.054caef1.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.72e1dbf6.js",
     "static/js/2.d7d33543.chunk.js",
-    "static/css/main.4dde34e5.chunk.css",
-    "static/js/main.940b2c37.chunk.js"
+    "static/css/main.2d869200.chunk.css",
+    "static/js/main.866dc5d3.chunk.js"
   ]
 }
