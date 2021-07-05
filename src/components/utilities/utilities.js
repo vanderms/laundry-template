@@ -91,20 +91,46 @@ export function SectionHeader({ title, subtitle, highlight }){
 }
 
 
-export function FeatureCard({icon, title, text}){
-
+export function CardsContainer({children}){
   return(
-    <div className="feature-card">
-      <div className="circle">
-        <Icon type={icon}/>
-      </div>
+    <div className="cards-container-component">
+      {children}
+    </div>
+  ); 
+}
+
+export function Card(props){
+
+  let image = null;
+  switch(props.type){
+    case 'icon':
+      image = (
+        <div className="circle">
+          <Icon type={props.icon}/>
+        </div>
+      );
+      break;
+    case 'img':
+      image = (
+        <img src={props.src} alt={props.alt} />
+      );
+      break;
+    default:
+      throw Error('Unknow type: ' + props.type);  
+  }
+
+  return (
+    <div className={'card-component type-' + props.type.trim()}>
+      { image }
       <div className="text">
-        <h3>{ title }</h3>
-        <p>{ text }</p>
+        <h3>{ props.title }</h3>
+        <p>{ props.text }</p>
       </div>
     </div>
   );
 }
+
+
 
 
 export function SectionCard({type, bgImageClass, paragraphs, cta}){
@@ -129,3 +155,4 @@ export function SectionCard({type, bgImageClass, paragraphs, cta}){
     </div>
   );
 }
+

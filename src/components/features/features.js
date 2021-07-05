@@ -1,4 +1,4 @@
-import { SectionHeader, FeatureCard } from "../utilities/utilities";
+import { SectionHeader, Card, CardsContainer } from "../utilities/utilities";
 
 export default function Features(){
   return(
@@ -7,27 +7,27 @@ export default function Features(){
         title='O MELHOR SERVIÇO PELO MENOR PREÇO'
         subtitle='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.'
       />
-      <div className="cards-container">
-        <FeatureCard
+      <CardsContainer>
+        <Card
+          type = 'icon'
           icon = 'truck'
           title = 'ENTREGA EXPRESSA'
           text = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
         />
-        <FeatureCard
+        <Card
+          type='icon'
           icon = 'check'
           title = 'QUALIDADE ACIMA DE TUDO'
           text = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
         />
-        <FeatureCard
+        <Card
+          type = 'icon'
           icon = 'credit-card'
           title = 'PREÇOS BAIXOS'
           text = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.'
         />
 
-      </div>
-
-
-
+      </CardsContainer>
     </section>
   );
 }

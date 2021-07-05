@@ -5,6 +5,7 @@ import Contato from './components/contato/contato';
 import BaixeOApp from './components/baixeoapp/baixeoapp';
 import Sobre from './components/sobre/sobre';
 import { useState } from 'react';
+import Services from './components/services/services';
 
 function App() {
   const [ showContactModal, setShowContactModal ] = useState(false);
@@ -19,13 +20,19 @@ function App() {
 
 
   return (
+    <>
+    <div id="home"></div>
     <Layout handleOpenContactModal={handleOpenContactModal}>
       <Contato show = { showContactModal } handleClose={ handleCloseContactModal }/>
       <Cover/>
       <Features/>
       <BaixeOApp/>
+      <div id="servicos"></div>
+      <Services/>
+      <div id="sobre"></div>
       <Sobre handleOpenContactModal={handleOpenContactModal}/>
     </Layout>
+    </>
   );
 }
 

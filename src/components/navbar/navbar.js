@@ -1,6 +1,5 @@
 import './navbar.scss';
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { CloseButton, MenuButton, Logo, BackDrop } from '../utilities/utilities';
 
 
@@ -42,12 +41,11 @@ export default function Navbar({ handleOpenContactModal }){
       <CloseButton className='close-btn' onClick={ closeSidebar }/>
       <Logo/>
       <div className="links">
-        <Link to='/'>HOME</Link>
-        <Link to='/sobre'>SOBRE</Link>
-        <Link to='/servicos'>SERVIÇOS</Link>
-        <Link to='/dicas'>DICAS</Link>
+        <a onClick={closeSidebar} href='#home'>HOME</a>
+        <a onClick={closeSidebar} href='#sobre'>SOBRE</a>
+        <a onClick={closeSidebar} href='#servicos'>SERVIÇOS</a>        
         <span onClick={ handleContactClicked } tabIndex='0' className='contato'>CONTATO</span>
-        <Link className='cta' to='/'>BAIXE O APP</Link> 
+        <span onClick={closeSidebar} className='cta'>BAIXE O APP</span> 
       </div>
        
     </nav>

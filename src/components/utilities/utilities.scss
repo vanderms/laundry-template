@@ -30,8 +30,16 @@
 }
 
 
-.feature-card{
-  @include size(310px, 336px);
+.card-component{
+  width: 310px;
+
+  &.type-icon{
+    height: 336px;
+  }
+  &.type-img{
+    height: 365px;
+  }
+
   @include bg-schema($light, $dark);
   @include flex-space(flex-start);
   flex-direction: column;
@@ -144,13 +152,12 @@
       height: 400px;
       width: 100%;
     }
-    
-
   }
+}
 
-  
-
-
-
-
+.cards-container-component{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 312px);   
+  justify-content: space-evenly;
+  row-gap: $spacing5;
 }

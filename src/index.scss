@@ -106,14 +106,11 @@ h4{
 .section-features{
   @include bg-schema($primary, $light);
   @include padding-lateral;
-  padding-bottom: 100px;
+  padding-bottom: 100px;  
+}
 
-  .cards-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 312px);   
-    justify-content: space-around;
-    row-gap: $spacing5;
-  }
+.services-section{
+  @include padding-lateral;
 }
 
 .contato-backdrop{
